@@ -1,2 +1,1 @@
-# JSDEMO
-TEST
+JSDEMO
