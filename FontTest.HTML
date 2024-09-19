@@ -1,0 +1,28 @@
+<!DOCTYPE>
+<html>
+<head>
+    <title>JS DEMO MKH</title>
+    <style> body{ font-family:'Courier New', Courier, monospace; } </style>
+</head>
+<body>
+    <p id="Testparagraph"></P>
+    <form>
+        <input id="number" type="number" name="value">
+        <br>
+        <button type="button" onclick="demofunction()">click me</button>
+    </form>
+<script>
+    var message="Hello";
+    document.write("Hello World");
+    chosenelement=document.getElementById("Testparagraph");
+    chosenelement.innerHTML="Is a turnip";
+    alert(message);
+
+    function demofunction(){
+        var x = document.getElementById("number").value;
+        let y = x*x;
+        alert(y);
+    }
+</script>    
+</body>
+</html>
