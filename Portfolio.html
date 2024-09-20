@@ -52,7 +52,8 @@
         ];
 
         var grade;
-        for (var i = gradeBands.length - 1; i >= 0; i--) {
+        for (var i = gradeBands.length - 1; i >= 0; i--) 
+        {
             if (totalMark >= gradeBands[i].mark) {
                 grade = gradeBands[i].grade;
                 break;
@@ -60,7 +61,8 @@
         }
 
         var nextGradeBandMark = 0;
-        for (var i = 0; i < gradeBands.length; i++) {
+        for (var i = 0; i < gradeBands.length; i++) 
+        {
             if (totalMark < gradeBands[i].mark) {
                 nextGradeBandMark = gradeBands[i].mark;
                 break;
@@ -71,6 +73,6 @@
         alert("Total Mark: " + totalMark + "\nGrade: " + grade + "\nMarks needed to get into the next grade band: " + marksNeeded);
     }
     </script>
-    
+
 </body>
 </html>
