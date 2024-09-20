@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PortfolioGradeCalc</title>
+</head>
+<body>
+    <h1>Portfolio grade calculator</h1>
+    <br>
+    <p1>Enter marks for Analysis, Design, Implementation, and Evaluation</p1>
+    <form>
+        <p2> Analysis </p2>
+        <br>
+        <input id="analysisMark" type="number" name="value">
+        <br>
+        <p2> Design </p2>
+        <br>
+        <input id="designMark" type="number" name="value">
+        <br>
+        <p2> Implementation </p2>
+        <br>
+        <input id="implementationMark" type="number" name="value">
+        <br>
+        <p2> Evaluation </p2>
+        <br>
+        <input id="evaluationMark" type="number" name="value">
+        <br>
+
+        <br>
+        <button type="button" onclick="calculateMark()">Calculate</button>
+    </form>
+
+    <script>
+    
+    function calculateMark(){
+        var analysisMark = parseInt(document.getElementById("analysisMark").value);
+        var designMark = parseInt(document.getElementById("designMark").value);
+        var implementationMark = parseInt(document.getElementById("implementationMark").value);
+        var evaluationMark = parseInt(document.getElementById("evaluationMark").value);
+
+        var totalMark = analysisMark + designMark + implementationMark + evaluationMark;
+
+        var gradeBands = [
+            { mark: 0, grade: "U" },
+            { mark: 4, grade: "G" },
+            { mark: 13, grade: "F" },
+            { mark: 22, grade: "E" },
+            { mark: 31, grade: "D" },
+            { mark: 41, grade: "C" },
+            { mark: 54, grade: "B" },
+            { mark: 67, grade: "A" },
+            { mark: 80, grade: "A*" }
+        ];
+
+        var grade;
+        for (var i = gradeBands.length - 1; i >= 0; i--) {
+            if (totalMark >= gradeBands[i].mark) {
+                grade = gradeBands[i].grade;
+                break;
+            }
+        }
+
+        var nextGradeBandMark = 0;
+        for (var i = 0; i < gradeBands.length; i++) {
+            if (totalMark < gradeBands[i].mark) {
+                nextGradeBandMark = gradeBands[i].mark;
+                break;
+            }
+        }
+        var marksNeeded = nextGradeBandMark - totalMark;
+
+        alert("Total Mark: " + totalMark + "\nGrade: " + grade + "\nMarks needed to get into the next grade band: " + marksNeeded);
+    }
+    </script>
+    
+</body>
+</html>
