@@ -5,10 +5,16 @@
 </head>
 <body>
     <h1>QUESTION 2 :</h1>
+    <br>
+    <p1>Add two numbers together</p1>
     <form>
         <input id="number1" type="number" name="value">
         <br>
+        <p2> + </p2>
+        <br>
         <input id="number2" type="number" name="value">
+        <br>
+
         <br>
         <button type="button" onclick="addition()">click me</button>
     </form>
@@ -16,8 +22,8 @@
     <script>
     
     function addition(){
-        var x = parseInt(document.getElementById("number1")).value;
-        var y = parseInt(document.getElementById("number2")).value;
+        var x = parseInt(document.getElementById("number1").value);
+        var y = parseInt(document.getElementById("number2").value);
         let z = x+y;
         alert(z);
     }
