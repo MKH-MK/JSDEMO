@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AVGcalc</title>
+</head>
+<body>
+    <h1>Average Calculator</h1>
+    <br>
+    <p>Enter how many numbers you want to average</p>
+    <form>
+        <input id="numCount" type="number" name="value">
+        <br>
+        <button type="button" onclick="calculateAverage()">Calculate</button>
+    </form>
+
+    <br>
+    <p>Result:</p>
+    <p id="result"></p>
+
+    <script>
+        function calculateAverage() {
+            let numCount = parseInt(document.getElementById("numCount").value);
+            let total = 0;
+            
+            for (let i = 1; i <= numCount; i++) {
+                let num = parseFloat(prompt("Enter number " + i + ":"));
+                total += num;
+            }
+            
+            let average = total / numCount;
+            
+            document.getElementById("result").innerText = "Total: " + total + " | Average: " + average;
+        }
+    </script>
+</body>
+</html>
