@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>COMPOUNDcalc</title>
+</head>
+<body>
+
+    <h1>Compound Interest Calculator</h1>
+
+    <br>
+
+    <p>Enter your current balance, interest rate, and desired balance:</p>
+
+    <form>
+
+        <label for="balance">Starting Balance (£):</label>
+        <input id="balance" type="number" name="balance" step="0.01">
+        <br><br>
+
+        <label for="interest">Interest Rate (0.0X for X%):</label>
+        <input id="interest" type="number" name="interest" step="0.01">
+        <br><br>
+
+        <label for="desired">Desired Balance (£):</label>
+        <input id="desired" type="number" name="desired" step="0.01">
+        <br><br>
+
+        <button type="button" onclick="calculateCompoundInterest()">Calculate</button>
+
+    </form>
+
+    <br>
+    <p>Result:</p>
+    <p id="result"></p>
+
+    <script>
+        function calculateCompoundInterest() {
+            let balance = parseFloat(document.getElementById("balance").value);
+            let interestRate = parseFloat(document.getElementById("interest").value);
+            let desiredBalance = parseFloat(document.getElementById("desired").value);
+
+            let year = 0;
+            let resultText = "";
+            
+            while (balance < desiredBalance) {
+                year++;
+                balance += balance * interestRate;
+                resultText += "Year " + year + ": New balance = £" + balance.toFixed(2) + "<br>";
+            }
+
+            document.getElementById("result").innerHTML = resultText;
+        }
+    </script>
+
+</body>
+</html>

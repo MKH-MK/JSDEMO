@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RANDOMword</title>
+</head>
+<body>
+    <h1>Random Number to Word Generator</h1>
+    <br>
+    <p>Click the button to generate a random number and see it as a word:</p>
+    <form>
+        <button type="button" onclick="generateWord()">Click Me</button>
+    </form>
+
+    <br>
+    <p>Result:</p>
+    <p id="result"></p>
+
+    <script>
+        function generateWord() {
+            const words = ["One", "Two", "Three", "Four", "Five", "Six"];
+            let randomNumber = Math.floor(Math.random() * 6); 
+            document.getElementById("result").innerText = words[randomNumber]; 
+        }
+    </script>
+
+</body>
+</html>
